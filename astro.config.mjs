@@ -18,6 +18,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  output: "server", // this makes all the routes server side
+  //output: "server", // this makes all the routes server side
   adapter: vercel()
 });
