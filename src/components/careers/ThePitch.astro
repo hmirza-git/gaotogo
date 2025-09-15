@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import SectionHeading from '../SectionHeading.astro'
+import Section from '../Section.astro'
+import { Image } from 'astro:assets'
+import workingtImage from '../../images/workings.jpg'
+
+
+const pitchPoints = [
+    {
+        title: "A supportive workplace",
+        para: "We keep it positive with respect, support, and clear communication."
+    },
+    {
+        title: "Flexible shifts and fair pay",
+        para: "Flexible hours that work for you, with fair pay you can count on."
+    },
+    {
+        title: "Staff meals & perks",
+        para: "Enjoy free staff meals other small perks that make a big difference."
+    },
+    {
+        title: "Grow with Us",
+        para: "We’re growing fast—and there’s space for you to grow with us."
+    }
+]
+
+---
+
+<Section width=" w-full" paddingY="pt-10 lg:py-32" paddingX="px-0" additionalClasses="bg-saffron">
+    <div class="lg:w-[calc((100%+1200px)/2)] flex flex-col-reverse lg:flex-row lg:space-x-25">
+        <div >
+            <Image src={workingtImage} alt="About Us Image 1" width={800} format='avif' class="mt-10 lg:mt-0 w-full object-cover aspect-square rounded-t-[40px] lg:rounded-t-[0] lg:rounded-r-[40px]" />
+        </div>
+        
+            <div class="my-auto lg:max-w-158 w-full px-5 lg:px-0">  
+                <SectionHeading text='Why work with us?' additionalClasses="mb-7 lg:mb-13"/>
+                <div class="flex flex-col lg:flex-row lg:flex-wrap font-secondary text-charcoal space-x-0 lg:space-x-10 space-y-6 lg:space-y-10">
+                    {pitchPoints.map(point => (
+                        <div class="flex-1 min-w-84">
+                            <h4 class="text-[22px] font-semibold mb-3">{point.title}</h4>
+                            <p class="text-[18px] opacity-80">{point.para}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+    
+</div>
+</Section>

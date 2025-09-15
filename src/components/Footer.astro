@@ -1,0 +1,117 @@
+---
+import FooterLinksMobile from './FooterLinksMobile.tsx';
+import FooterLinksDesktop from './FooterLinksDesktop.tsx';
+
+const socialIcons = [
+    { src: "/icons/instagram.svg", alt: "Instagram", href: "#" },
+    { src: "/icons/snapchat.svg", alt: "Snapchat", href: "#" },
+    { src: "/icons/youtube.svg", alt: "Youtube", href: "#" },
+    { src: "/icons/facebook.svg", alt: "Facebook", href: "#" },
+    { src: "/icons/x-twitter.svg", alt: "X", href: "#" },
+    { src: "/icons/thread.svg", alt: "Thread", href: "#" },
+]
+
+const aboutLinks = [
+    { text: "Our Story", href: "#" },
+    { text: "Contact Us", href: "#" },
+    { text: "Careers", href: "/careers" },
+    { text: "FAQs", href: "#" },
+]
+
+const menuLinks = [
+    { text: "Menu", href: "#" },
+    { text: "Nutritional Info", href: "#" },
+    { text: "Gluten Free", href: "#" },
+    { text: "Allergens", href: "#" },
+]
+
+const policyLinks = [
+    { text: "Terms & Conditions", href: "#" },
+    { text: "Privacy", href: "#" },
+    { text: "Cookies Policy", href: "#" },
+]
+
+const condition = false;
+---
+
+<footer class="bg-charcoal text-rice">
+    
+    <div class="flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between px-5 lg:px-0 py-10 pt-15 lg:py-22 max-w-300 mx-auto">
+
+        {/** for the logo, tagline, social links */}
+        <div class="flex flex-col items-start space-y-4">
+            <img src="/logo-secondary.svg" alt="Logo" class="h-11 lg:h-13" />
+            <p class="text-[14px] lg:text-[16px] font-secondary text-rice/80 w-70">Fresh, flavourful meals for busy lives — mostly gluten-free, always fuss-free, and planet-friendly.</p>
+            <ul class="flex space-x-2 mt-1">
+                {socialIcons.map(item => (
+                    <li>
+                        <a href={item.href} class="">
+                            <img src={item.src} alt={item.alt} class="w-7 lg:w-8"/>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        {/** for the links - DESKTOP */}
+        <FooterLinksDesktop links={aboutLinks} title="About Us" client:visible />
+        <FooterLinksDesktop links={menuLinks} title="About Us" client:visible />
+
+        {/** for the subscription CTA */}
+        <div class="lg:flex flex-col space-y-5 p-5 lg:p-0 border-2 lg:border-0 border-emerald rounded-[24px]">
+            <div class="flex flex-col space-y-1">
+                <span class="font-secondary text-[16px] font-medium text-rice/80"> Don’t Miss a Bite </span>
+                <h5 class="font-primary text-4xl tracking-wide leading-[1.3]">Stay in touch with all </br> things GAO TO GO</h5>
+            </div>
+            <a href="#" class="flex items-center space-x-2 bg-rice pr-2 rounded-full">
+                <span class="flex-1 font-primary text-[16px] tracking-wider bg-emerald hover:bg-rice hover:text-charcoal px-5 py-3 rounded-full text-center transition delay-50 duration-300 ease-in-out">Get Updates & Offers</span>
+                <img src="/icons/arrow-right.svg" alt="" class="h-8">
+            </a>
+        </div>
+
+         {/** for the links - MOBILE */}
+        <div class="lg:hidden flex flex-col space-y-6">
+            <div><FooterLinksMobile links={aboutLinks} title="About Us" client:visible/></div>
+            <div><FooterLinksMobile links={menuLinks} title="Our Menu" client:visible/></div>  
+        </div>
+
+    </div>
+    
+    {/** for the policies part - DESKTOP */}
+    <div class="hidden lg:block border-t-2 border-rice/10">
+        <div class="flex justify-between max-w-300 py-4 mx-auto">
+            <span class="font-secondary text-[16px] uppercase">© 2025 GAO TO GO</span>
+            <ul class="flex space-x-6">
+                {policyLinks.map(item => (
+                    <li class="font-secondary text-[16px] hover:text-rice/80"><a href={item.href} class="">{item.text}</a></li>
+                ))}
+            </ul>
+            <span class="font-secondary text-[16px]">creative by 
+                <a href="#" class="underline hover:text-emerald">mirza</a>
+            </span>
+        </div>
+    </div>
+
+    {/** for the policies part - MOBILE */}
+    <div class="flex flex-col space-y-4 lg:hidden px-5 pb-10">
+        <div class="flex justify-between">
+            <ul>
+                <li class="font-secondary text-[16px] hover:text-rice/80 w-20"><a href={policyLinks[0].href} class="">{policyLinks[0].text}</a></li>
+        </ul>
+        <ul class="flex space-x-4">
+                <li class="font-secondary text-[16px] hover:text-rice/80 max-w-20"><a href={policyLinks[1].href} class="">{policyLinks[1].text}</a></li>
+                <li class="font-secondary text-[16px] hover:text-rice/80 max-w-20"><a href={policyLinks[2].href} class="">{policyLinks[2].text}</a></li>
+        </ul>
+        </div>
+        
+        <div class="flex space-x-2">
+            
+            <span class="font-secondary text-[16px] uppercase">© 2025 GAO TO GO</span>
+            <span class="font-secondary text-[16px]">|</span>
+            <span class="font-secondary text-[16px]">creative by 
+                <a href="#" class="underline text-emerald">mirza</a>
+            </span>
+        </div>
+    </div>
+        
+</footer>

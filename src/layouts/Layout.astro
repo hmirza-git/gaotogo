@@ -1,0 +1,29 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+}
+
+const { title, description= "Fast, fresh Vietnamese meals made for busy lives. Order for delivery or click & collect — 98% gluten-free, eco-friendly, and packed with flavour.", image } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta property="og:image" content={image} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-rice ">
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>

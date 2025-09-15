@@ -1,0 +1,30 @@
+---
+interface props {
+    ctaText?: string;
+    link?: string;
+    hoverScale?: string;
+    additionalStyles?: string;
+    mobilePaddingX?: string;
+    desktopPaddingX?: string;
+    mobilePaddingY?: string;
+    desktopPaddingY?: string;
+    backgroundColor?: string;
+    hoverBackgroundColor?: string;
+    textColor?: string;
+    hoverTextColor?: string;
+
+
+
+}
+
+const { ctaText="Order Now",link="#",hoverScale = "hover:scale-100", additionalStyles = "", mobilePaddingX = "px-3", desktopPaddingX = "lg:px-6", mobilePaddingY = "py-[6px]", desktopPaddingY = "lg:py-3", backgroundColor = "bg-emerald", hoverBackgroundColor = "hover:bg-rice", textColor = "text-rice", hoverTextColor = "hover:text-emerald" } = Astro.props;
+
+---
+
+
+<a
+    href={link}
+    class:list={[mobilePaddingX, desktopPaddingX, mobilePaddingY, desktopPaddingY, backgroundColor,hoverBackgroundColor, textColor, hoverTextColor, 'text-[16px]', 'lg:text-[20px]', 'font-primary', 'tracking-wide',  'rounded-full', 'transition', 'delay-50', 'duration-300', 'ease-in-out', hoverScale, additionalStyles]}
+>
+    {ctaText}
+</a>

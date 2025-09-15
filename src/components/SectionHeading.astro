@@ -1,0 +1,20 @@
+---
+interface Props {
+    text: string;
+    subtext?: string;
+    showSubText?: boolean;
+    color?: string;
+    additionalClasses?: string;
+}
+
+const {text, subtext="", showSubText=false, color="text-charcoal", additionalClasses=""} = Astro.props;
+---
+
+<div class={`${additionalClasses}`}>
+    {showSubText && (
+        <span class="text-[12px] lg:text-sm text-charcoal/80 bg-emerald/10 border-emerald/2 border-2 uppercase font-secondary font-medium tracking-wide px-3 py-1.5 lg:px-4 lg:py-2 rounded-full"
+        >{subtext}</span>
+    )}
+    <h2 class={`${showSubText && "mt-2"} text-charcoal text-[32px] lg:text-[52px] font-primary leading-[1.3] tracking-wide`}>{text}</h2>
+    
+</div>

@@ -1,0 +1,14 @@
+---
+interface Props {
+    paddingX?: string;
+    paddingY?: string;
+    width?: string;
+    additionalClasses?: string;
+}
+
+const {paddingY="py-10 lg:py-32", paddingX="px-5 lg:px-0", width="max-w-300", additionalClasses="" } = Astro.props;
+---
+
+<section class=`font-secondary ${paddingY} ${paddingX} ${width} mx-auto ${additionalClasses}`>
+    <slot />
+</section>

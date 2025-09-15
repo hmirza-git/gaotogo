@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+import aboutImage  from '../../images/eco-packaging.jpg'
+import Section from '../Section.astro'
+---
+
+
+<Section width=" w-full" paddingY='pt-0 pb-10 lg:py-32' additionalClasses="bg-saffron rounded-b-[40px] lg:rounded-[0px]">
+    <div class="lg:w-[calc((100%+1200px)/2)] flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-25">
+        <div class="w-full">
+            <Image src={aboutImage} alt="About Us Image 1" width={800} format='avif' class="w-full object-cover aspect-square rounded-[24px] lg:rounded-[0] lg:rounded-r-[40px]" />
+        </div>
+        
+            <div class="my-auto lg:max-w-158">  
+                <div class="pb-4 lg:pb-8">
+                    <p class="text-[18px] lg:text-[24px] text-charcoal/80 pb-4 lg:pb-6">Growing up around the aromas of simmering broth and fresh herbs, Vietnamese food has always felt like home to me — warm, vibrant, and full of care.</p>
+                    <p class="text-[18px] lg:text-[24px] text-charcoal/80 ">But as life got busier, I struggled to find meals that had the same soul, without the wait. That’s how Gạo To Go began: a way to share the food I love, at the pace life demands — without compromising on flavour, quality, or tradition.</p>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-semibold text-[18px] lg:text-[24px]">Ms. Doan Thi Mai Huong</span>
+                    <span class="text-[14px] lg:text-[20px] text-charcoal/80">Founder & CEO</span>
+                </div>
+            </div>
+    
+</div>
+</Section>

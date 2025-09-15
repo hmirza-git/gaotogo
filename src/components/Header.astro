@@ -1,0 +1,21 @@
+---
+import Button from './Button.astro';
+import Nav from './Nav.astro';
+import MobileMenu from "./MobileMenu.astro"
+
+---
+
+
+<header class="bg-charcoal mx-4 mt-4 lg:mt-8 py-3 lg:py-5 px-5 lg:px-8 lg:max-w-300 box-border lg:mx-auto inset-x-0 rounded-full z-50 fixed">
+    <div class="flex items-center justify-between">
+        <a href="/" class="pt-[2px] lg:pt-1">
+            <img src="/logo.svg" alt="Logo" class="h-7 lg:h-11" />
+        </a>
+        <div class="flex flex-row space-x-4 lg:space-x-5 items-center">
+            <Nav/>
+            <Button hoverScale="hover:scale-102"/>
+            <MobileMenu />
+        </div>
+        
+    </div>
+</header>

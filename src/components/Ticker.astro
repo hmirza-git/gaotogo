@@ -1,0 +1,29 @@
+---
+interface Props {
+    topBanner?: string;
+    bottomBanner?: string;
+}
+
+const {topBanner="lg:block", bottomBanner="lg:block"} = Astro.props;
+
+const tickerText = [
+    "🔥 COOKED FRESH DAILY",
+    "🌿 98% GLUTEN-FREE",
+    "⚡ BUILT FOR BUSY LIVES",
+    "🌱 ECO-FRIENDLY PACKAGING",
+    "🍜 BOLD FLAVOUR, NO WAITING"
+];
+---
+
+<div class="bg-chili">
+    <div class={`hidden ${topBanner} h-10 lg:h-20 bg-rice rounded-b-full`}></div>
+    <div class="flex flex-row whitespace-nowrap py-5 lg:py-15 space-x-6 lg:space-x-13 text-rice text-[32px] lg:text-7xl overflow-hidden">
+        <ul class="flex space-x-6 lg:space-x-13 font-primary tracking-wide leading-[1.25] animate-loop-scroll lg:animate-loop-scroll-lg">
+            {tickerText.map(item => <li class="min-w-fit">{item}</li>)}
+        </ul>
+        <ul class="flex space-x-6 lg:space-x-13 font-primary tracking-wide leading-[1.25] animate-loop-scroll lg:animate-loop-scroll-lg" aria-hidden="true">
+            {tickerText.map(item => <li class="min-w-fit">{item}</li>)}
+        </ul>
+    </div>
+    <div class={`hidden ${bottomBanner} h-10 lg:h-20 bg-rice rounded-t-full`}></div>
+</div>

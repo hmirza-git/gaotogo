@@ -1,0 +1,52 @@
+---
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+import outdoorImage from '../images/outdoor.jpg';
+---
+
+<div class="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 font-secondary m-0">
+    <div id="leftDiv" class="flex flex-col space-y-5 lg:space-y-10 p-5 lg:p-10 border-2 border-charcoal rounded-[24px] lg:rounded-[40px] h-fit shrink-0 ">
+        <div class="flex flex-col space-y-1">
+            <h4 class="text-2xl lg:text-[32px] text-charcoal font-semibold">Click & Collect</h4>
+            <p class="text-[18px] lg:text-[28px] text-charcoal/80 font-normal mb-3">Ready when you are.</p>
+            <Button 
+            hoverBackgroundColor="hover:bg-charcoal" hoverTextColor="hover:text-rice"
+            mobilePaddingY="py-2" 
+            additionalStyles="lg:w-fit text-center" />
+        </div>
+        <div class="flex flex-col space-y-1">
+            <h4 class="text-2xl lg:text-[32px] text-charcoal font-semibold">Get It Delivered</h4>
+            <p class="text-[18px] lg:text-[28px] text-charcoal/80 font-normal mb-3">Right to your door.</p>
+            <Button hoverBackgroundColor="hover:bg-charcoal" hoverTextColor="hover:text-rice" mobilePaddingY="py-2" additionalStyles="lg:w-fit text-center" />
+        </div>
+    </div>
+    <div id="rightDiv">
+        <Image src={outdoorImage} alt="Description of image" format="avif" class="object-cover h-60  md:h-full rounded-[24px] lg:rounded-[40px]" />
+    </div>
+</div>
+
+<script>
+
+// Use 'DOMContentLoaded' to ensure the script runs after the DOM is fully loaded.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the DOM elements by their IDs
+            const leftDiv = document.getElementById('leftDiv');
+            const rightDiv = document.getElementById('rightDiv');
+
+            // Define the media query for large screens (lg breakpoint in Tailwind)
+            const mediaQuery = window.matchMedia('(min-width: 768px)');
+            
+            // Check if the current screen size matches the media query
+            if (mediaQuery.matches) {
+                // Check if both elements exist
+                if (leftDiv && rightDiv) {
+                    // Get the height of the left div using offsetHeight
+                    const heightInPixels = leftDiv.offsetHeight;
+                    
+                    // Apply this height to the right div's style
+                    rightDiv.style.height = `${heightInPixels}px`;
+                }
+            }
+        });
+
+</script>

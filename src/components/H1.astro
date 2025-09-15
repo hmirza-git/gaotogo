@@ -1,0 +1,11 @@
+---
+interface Props {
+    text: string;
+    width?: string;
+    additionalClasses?: string;
+}
+
+const {text, width="w-full", additionalClasses="" } = Astro.props;
+---
+
+<h1 class={`text-charcoal ${width} text-[40px] lg:text-[102px] leading-[1.3] font-primary tracking-wide text-left ${additionalClasses}`}>{text}</h1>
