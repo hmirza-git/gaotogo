@@ -1,1 +1,0 @@
-import{b as a}from"./SneakPeak.BpX4lrVB.js";import"./jsx-runtime.D_zvdyIk.js";import"./index.RH_Wq4ov.js";const t={...a,propertiesToHash:["src"],async transform(r,o){return{data:r,format:o.format}}};var m=t;export{m as default};
