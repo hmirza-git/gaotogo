@@ -1,7 +1,7 @@
-import type { APIRoute } from "astro";
+// import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async () => {
-    // send an email
+// export const GET: APIRoute = async () => {
+//     // send an email
     
-    return new Response(JSON.stringify({success: true}))
-};
+//     return new Response(JSON.stringify({success: true}))
+// };
